@@ -1,35 +1,35 @@
 package com.network.ads.library.common
 
-interface LibAdListener {
+abstract class LibAdListener {
 
-    var adListener: LibAdListener
+    var secondAdListener: LibAdListener? = null
 
-    fun onAdClosed() {
-        adListener.onAdClosed()
+    open fun onAdClosed() {
+        secondAdListener?.onAdClosed()
     }
 
-    fun onAdFailedToLoad() {
-        adListener.onAdFailedToLoad()
+    open fun onAdFailedToLoad() {
+        secondAdListener?.onAdFailedToLoad()
     }
 
-    fun onAdLeftApplication() {
-        adListener.onAdLeftApplication()
+    open fun onAdLeftApplication() {
+        secondAdListener?.onAdLeftApplication()
     }
 
-    fun onAdOpened() {
-        adListener.onAdOpened()
+    open fun onAdOpened() {
+        secondAdListener?.onAdOpened()
     }
 
-    fun onAdLoaded() {
-        adListener.onAdLoaded()
+    open fun onAdLoaded() {
+        secondAdListener?.onAdLoaded()
     }
 
-    fun onAdClicked() {
-        adListener.onAdClicked()
+    open fun onAdClicked() {
+        secondAdListener?.onAdClicked()
     }
 
-    fun onAdImpression() {
-        adListener.onAdImpression()
+    open fun onAdImpression() {
+        secondAdListener?.onAdImpression()
     }
 
 }
